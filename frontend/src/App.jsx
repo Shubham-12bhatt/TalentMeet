@@ -1,4 +1,4 @@
-import { SignInButton, SignOutButton } from '@clerk/react'
+import { SignInButton, SignOutButton, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
 import React from 'react'
 
 function App() {
