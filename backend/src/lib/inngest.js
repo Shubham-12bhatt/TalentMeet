@@ -1,14 +1,12 @@
 import { Inngest } from "inngest";
 import connectDB from "./db.js";
 import User from "../models/User.js";
-import { upertStreamUser } from "./stream.js";
+import { upsertStreamUser } from "./stream.js";
 
 
 export const inngest = new Inngest({
   id: "TalentMeet",
-
 })
-
 
 const syncUser = inngest.createFunction(
 
