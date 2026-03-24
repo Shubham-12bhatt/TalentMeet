@@ -4,7 +4,9 @@ import express from "express";
 import connectDB from "./lib/db.js";
 import { serve } from "inngest/express";
 import { inngest, functions } from './lib/inngest.js';
-
+import { clerkMiddleware } from '@clerk/express'
+import { protectRoute } from './middleware/protectroute.js';
+import chatRoutes from "./routes/chatRoutes.js";
 const app = express();
 
 app.use(express.json());
@@ -12,7 +14,15 @@ app.use(cors({
     origin: process.env.FRONTEND_URL,
     credentials: true
 }));
+app.use(clerkMiddleware());
 app.use("/api/inngest", serve({ client: inngest, functions }));
+app.use("/api/chat",chatRoutes);
+app.get("/health",(req,res)=>{
+    res.send("ok");
+})
+// app.get("/video-calls",protectRoute,(req,res)=>{
+//     res.send("hello world");
+// })
 
 
 const startServer = async () => {
