@@ -1,0 +1,18 @@
+import express from 'express';
+import { protectRoute } from '../middleware/protectroute';
+import { createSession, getActiveSessions, getMyRecentSessions, getSessionById, joinSession, endSession } from '../controllers/sessionController';
+
+
+const router = express.Router();
+ 
+
+
+router.post("/", protectRoute, createSession)
+router.get("/active", protectRoute, getActiveSessions);
+router.get("/my-recent", protectRoute, getMyRecentSessions);
+router.get("/:id", protectRoute, getSessionById);
+router.post("/:id/join", protectRoute, joinSession);
+router.get("/:id/end", protectRoute, endSession);
+
+
+export default router
