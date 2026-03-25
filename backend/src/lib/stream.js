@@ -1,4 +1,5 @@
 import { StreamChat } from "stream-chat";
+import { StreamVideoClient } from '@stream-io/video-client';
 
 const apiKey = process.env.STREAM_API_KEY
 const apiSecret = process.env.STREAM_API_SECRET
@@ -8,6 +9,9 @@ if (!apiKey || !apiSecret) {
 }
 
 export const chatClient = StreamChat.getInstance(apiKey, apiSecret);
+export const streamClient = new StreamVideoClient(apiKey, apiSecret)
+
+
 
 export const upsertStreamUser = async (userData) => {
 
