@@ -3,7 +3,7 @@ import { Routes,Route,Navigate } from 'react-router'
 import { useUser } from '@clerk/clerk-react'
 import HomePage from './pages/HomePage'
 import Problems from './pages/Problems'
-
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   const { isSignedIn } = useUser();
