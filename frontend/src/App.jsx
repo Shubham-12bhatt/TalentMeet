@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import Problems from './pages/Problems'
 import { Toaster } from 'react-hot-toast'
 import DashboardPage from './pages/DashboardPage'
+import ProblemPage from './pages/ProblemPage'
 
 function App() {
   const { isSignedIn, isLoaded } = useUser();
@@ -17,6 +18,7 @@ function App() {
       <Route path="/" element={!isSignedIn ? <HomePage /> : <Navigate to={"/dashboard"} />} />
         <Route path="/dashboard" element={isSignedIn ? <DashboardPage /> : <Navigate to={"/"} />} />
         <Route path="/problems" element={<Problems />} />
+        <Route path="/problems/:id" element={<ProblemPage />} />
     </Routes>
       <Toaster toastOptions={{duration:3000}}/>
     </>
