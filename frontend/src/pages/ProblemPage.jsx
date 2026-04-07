@@ -1,7 +1,11 @@
-import React from 'react'
-import { useNavigate } from 'react-router';
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router';
 import { PROBLEMS } from '../data/problem';
-
+import {Panel,Group, Separator} from "react-resizable-panels"
+import Navbar from '../components/Navbar';
+import ProblemDescription from '../components/ProblemDescription';
+import CodeEditor from '../components/CodeEditor';
+import OutputPanel from '../components/OutputPanel';
 function ProblemPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -26,10 +30,8 @@ function ProblemPage() {
     setCode(currentProblem.starterCode[e.target.value]);
     setOutput(null);
   }
-  const handleProblemChange = (e) => {
-    setCurrentProblemId(e.target.value);
-    setCode(currentProblem.starterCode[selectedLanguage]);
-    setOutput(null);
+  const handleProblemChange = (newProblemId) => {
+   navigate(`/problem/${newProblemId}`)
   }
   const triggerConfetti = () => { }
   
@@ -40,7 +42,38 @@ function ProblemPage() {
   const handleRunCode = () => {}
   
   return (
-    <div>ProblemPage</div>
+    <div>
+      <Navbar />
+      <div>
+        <Group direction='horizontal'>
+          <Panel defaultSize={40} minSize={20}>
+            {/* left panel problem description */}
+            <ProblemDescription problem={currentProblem}
+              currentProblemId={currentProblemId}
+              onProblemChange={handleProblemChange}
+              allProblems = {Object.values(PROBLEMS)}
+            />
+         </Panel>
+         <Separator />
+          {/* right panel code editor */}
+          <Panel defaultSize={40} minSize={30}>
+            <Group direction='vertical'>
+              <Panel defaultSize={70} minSize={30}>
+              <CodeEditor/>
+              </Panel>
+              <Separator />
+              {/* output */}
+              <Panel defaultSize={30} minSize={30}>
+              <OutputPanel/>
+              </Panel>
+            </Group>
+         </Panel>
+        </Group>
+      </div>
+    
+    
+    
+    </div>
   )
 }
 

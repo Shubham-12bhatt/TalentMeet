@@ -3,12 +3,12 @@ import { BookOpenIcon, LayoutDashboardIcon, Video } from 'lucide-react';
 import React from 'react'
 import { Link, useLocation } from 'react-router'
 
-const Navbar = () => {
+function Navbar() {
   const location = useLocation();
   const isActive = (path) => {
     return location.pathname === path
   }
-  return (
+  return (  
     <nav className="sticky top-0 z-50 bg-[#0a0f1c]/80 backdrop-blur-xl border-b border-blue-900/40 shadow-[0_4px_30px_rgba(59,130,246,0.05)] text-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">

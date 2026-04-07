@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DashboardPage = () => {
+function DashboardPage() {
   return (
     <div>DashboardPage</div>
   )
