@@ -16,7 +16,7 @@ const HomePage = () => {
                 <Video className="size-5 text-white/90" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-100 to-cyan-200 bg-clip-text text-transparent pb-1">
+                <span className="text-xl font-bold bg-linear-to-r from-blue-100 to-cyan-200 bg-clip-text text-transparent pb-1">
                   TalentMeet
                 </span>
                 <span className="text-[10px] font-semibold text-blue-500/90 uppercase tracking-[0.2em]">

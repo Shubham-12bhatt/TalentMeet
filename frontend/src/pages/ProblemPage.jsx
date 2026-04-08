@@ -14,7 +14,7 @@ function ProblemPage() {
   const [selectedLanguage, setSelectedLanguage] = useState("javascript");
   const [code, setCode] = useState(PROBLEMS[currentProblemId].starterCode[selectedLanguage]); 
   const [output,setOutput] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [isRunning, setIsRunning] = useState(false);
   const currentProblem = PROBLEMS[currentProblemId];
 
 
@@ -31,7 +31,7 @@ function ProblemPage() {
     setOutput(null);
   }
   const handleProblemChange = (newProblemId) => {
-   navigate(`/problem/${newProblemId}`)
+   navigate(`/problems/${newProblemId}`)
   }
   const triggerConfetti = () => { }
   
@@ -59,11 +59,19 @@ function ProblemPage() {
           <Panel defaultSize={40} minSize={30}>
             <Group direction='vertical'>
               <Panel defaultSize={70} minSize={30}>
-              <CodeEditor/>
+                <CodeEditor
+                  code={code}
+                  isRunning={isRunning}
+                  onLanguageChange={handleLanguageChange}
+                  selectedLanguage={selectedLanguage}
+                  onCodeChange = {setCode}
+                  onRunCode = {handleRunCode}
+                /> 
               </Panel>
               <Separator />
               {/* output */}
               <Panel defaultSize={30} minSize={30}>
+
               <OutputPanel/>
               </Panel>
             </Group>
