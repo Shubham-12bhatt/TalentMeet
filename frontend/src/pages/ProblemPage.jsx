@@ -45,7 +45,7 @@ function ProblemPage() {
     <div>
       <Navbar />
       <div>
-        <Group direction='horizontal'>
+        <Group orientation='horizontal'>
           <Panel defaultSize={40} minSize={20}>
             {/* left panel problem description */}
             <ProblemDescription problem={currentProblem}
@@ -57,7 +57,7 @@ function ProblemPage() {
          <Separator />
           {/* right panel code editor */}
           <Panel defaultSize={40} minSize={30}>
-            <Group direction='vertical'>
+            <Group orientation='vertical'>
               <Panel defaultSize={70} minSize={30}>
                 <CodeEditor
                   code={code}
