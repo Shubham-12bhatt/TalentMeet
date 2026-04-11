@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar';
 import ProblemDescription from '../components/ProblemDescription';
 import CodeEditor from '../components/CodeEditor';
 import OutputPanel from '../components/OutputPanel';
+import { executeCode } from '../lib/piston';
 function ProblemPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -39,7 +40,13 @@ function ProblemPage() {
     
   }
 
-  const handleRunCode = () => {}
+  const handleRunCode = async () => {
+    setIsRunning(true);
+    setOutput(null);
+    const result = await executeCode(selectedLanguage,code);
+    setOutput(result);
+    setIsRunning(false);
+  }
   
   return (
     <div>
