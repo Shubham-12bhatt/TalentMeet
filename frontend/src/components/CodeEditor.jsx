@@ -67,7 +67,7 @@ function CodeEditor({
             onChange={onCodeChange}
             theme="vs-dark"
            options={{
-  fontSize: 14,
+  fontSize: 13,
   lineNumbers: "on",
   scrollBeyondLastLine: false,
   automaticLayout: true,
