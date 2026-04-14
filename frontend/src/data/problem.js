@@ -345,16 +345,16 @@ export const LANGUAGE_CONFIG = {
   javascript: {
     name: "JavaScript",
     icon: "/javascript.png",
-    monacoLang: "javascript",
+    monaco: "javascript",
   },
   python: {
     name: "Python",
     icon: "/python.png",
-    monacoLang: "python",
+    monaco: "python",
   },
   java: {
     name: "Java",
     icon: "/java.png",
-    monacoLang: "java",
+    monaco: "java",
   },
 };

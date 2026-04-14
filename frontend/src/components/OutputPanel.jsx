@@ -1,7 +1,7 @@
 import React from 'react'
 import { Terminal, CheckCircle2, XCircle, AlertCircle } from 'lucide-react'
 
-function OutputPanel({output}) {
+function OutputPanel({output, isRunning}) {
   return (
     <div className="flex flex-col h-full w-full bg-[#0f172a] overflow-hidden font-sans">
       {/* Header */}
@@ -12,7 +12,15 @@ function OutputPanel({output}) {
 
       {/* Content Area */}
       <div className="flex-1 overflow-auto p-4 bg-[#020617] font-mono text-sm leading-relaxed">
-        {output === null ? (
+        {isRunning ? (
+          <div className="flex w-full flex-col gap-4">
+            <div className="skeleton h-32 w-full"></div>
+            <div className="skeleton h-4 w-28"></div>
+            <div className="skeleton h-4 w-full"></div>
+            <div className="skeleton h-4 w-full"></div>
+          </div>
+        ) : output === null ? (
+          
           <div className="flex flex-col items-center justify-center h-full text-slate-500 space-y-3">
             <div className="p-4 bg-slate-800/30 rounded-full border border-slate-700/50">
               <Terminal className="w-8 h-8 opacity-70" />

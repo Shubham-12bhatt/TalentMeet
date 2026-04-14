@@ -1,6 +1,6 @@
 // Piston API is a service for code execution
 import axios from "axios";
-const PISTON_API = "https://emkc.org/api/v2/piston";
+const PISTON_API = "/api/v2";
 
 const LANGUAGE_VERSIONS = {
   javascript: { language: "javascript", version: "18.15.0" },
@@ -37,7 +37,7 @@ export async function executeCode(language, code) {
         ],
       })
     const data = response.data;
-    const output = data.run.output || "";
+    const output = data.run.stdout || "";
     const stderr = data.run.stderr || "";
 
     if (stderr) {

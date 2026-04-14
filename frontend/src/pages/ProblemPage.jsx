@@ -97,9 +97,9 @@ function ProblemPage() {
   return (
     <div className="flex flex-col h-screen bg-[#0f172a]">
       <Navbar />
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1  overflow-hidden">
         <Group orientation='horizontal'>
-          <Panel defaultSize={40} minSize={20}>
+          <Panel defaultSize={30} minSize={20}>
             {/* left panel problem description */}
             <ProblemDescription problem={currentProblem}
               currentProblemId={currentProblemId}
@@ -111,8 +111,8 @@ function ProblemPage() {
           {/* right panel code editor */}
           <Panel defaultSize={40} minSize={30}>
             <Group orientation='vertical'>
-              <Panel defaultSize={70} minSize={30}>
-                <CodeEditor
+              <Panel defaultSize={60} minSize={30}>
+                <CodeEditor   
                   code={code}
                   isRunning={isRunning}
                   onLanguageChange={handleLanguageChange}
@@ -123,9 +123,9 @@ function ProblemPage() {
               </Panel>
               <Separator />
               {/* output */}
-              <Panel defaultSize={30} minSize={30}>
+              <Panel defaultSize={40} minSize={30}>
 
-              <OutputPanel output={output}/>
+              <OutputPanel output={output} isRunning={isRunning} />
               </Panel>
             </Group>
          </Panel>
