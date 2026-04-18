@@ -1,5 +1,5 @@
-import { chatClient } from "../lib/stream";
-import Session from "../models/Session";
+import { chatClient, streamClient } from "../lib/stream.js";
+import Session from "../models/Session.js";
 
 
 
@@ -31,6 +31,7 @@ export async function createSession(req,res){
       members : [clerkId]
     })   
     await channel.create();
+    res.status(201).json({session});
     } catch (error) {
         console.log("error in createSession",error);
         return res.status(500).json({message:"Internal server error"})
@@ -41,11 +42,13 @@ export async function getActiveSessions(req,res){
     try {
       const sessions = await Session.find({
         status: "active",
-      }).populate("host", "name profileImage email clerkId").sort({ createdAt: -1 }).limit(20);
+      }).populate("host", "name profileImage email clerkId")
+        .populate("participant", "name profileImage email clerkId")
+        .sort({ createdAt: -1 }).limit(20);
 
 
       res.status(200).json({ sessions });
-        
+          
     } catch (error) {
         console.log("error in getActiveSessions",error);
         return res.status(500).json({message:"Internal server error"})
@@ -88,7 +91,7 @@ export async function getSessionById(req,res){
 export async function joinSession(req,res){
     try {
       const { id } = req.params;
-      const userId = req.use._id;
+      const userId = req.user._id;
       const clerkId = req.user.clerkId;
       const session = await Session.findById(id);
       if(!session){
