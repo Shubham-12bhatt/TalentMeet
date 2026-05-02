@@ -52,11 +52,11 @@ function ProblemDescription({problem, currentProblemId, onProblemChange, allProb
                 </h3>
                 <div className="bg-[#0a0f1c] rounded-lg p-5 font-mono text-sm border border-blue-900/30">
                   <div className="mb-2 flex items-start gap-2">
-                    <span className="text-emerald-400 font-bold w-16 shrink-0">Input:</span>
+                    <span className="text-primary font-bold w-16 shrink-0">Input:</span>
                     <span className="text-slate-300">{example.input}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-cyan-400 font-bold w-16 shrink-0">Output:</span>
+                    <span className="text-secondary font-bold w-16 shrink-0">Output:</span>
                     <span className="text-slate-300">{example.output}</span>
                   </div>
                   {example.explanation && (

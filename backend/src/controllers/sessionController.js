@@ -126,9 +126,9 @@ export async function endSession(req,res){
       if(!session){
         return res.status(404).json({message:"Session not found"})
       }
-      if(session.host.toString() !== userId.toString() && session.participant.toString() !== userId.toString()){
-        return res.status(403).json({message:"You are not authorized to end this session"})
-      }
+     if (session.host.toString() !== userId.toString()) {
+      return res.status(403).json({ message: "Only the host can end the session" });
+    }
       if(session.status === "completed"){
         return res.status(400).json({message:"Session is already completed"})
       }
