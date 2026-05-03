@@ -1,6 +1,6 @@
 // Piston API is a service for code execution
 import axios from "axios";
-const PISTON_API = "/api/v2";
+const PISTON_API = import.meta.env.VITE_PISTON_API;
 
 const LANGUAGE_VERSIONS = {
   javascript: { language: "javascript", version: "18.15.0" },
