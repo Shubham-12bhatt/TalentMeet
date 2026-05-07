@@ -75,3 +75,16 @@ TalentMeet is a full-stack MERN-based interview platform designed for real-time 
 
 ---
 
+# Add “📌 Future Improvements”
+
+```markdown
+## 📌 Future Improvements
+
+- 🤖 AI-powered interview feedback
+- 🧪 Custom test case creation
+- 🌍 Multi-language code execution
+- 📊 Detailed interview analytics
+- 🏆 Leaderboard system
+- 📅 Interview scheduling
+- 📁 Resume upload support
+
