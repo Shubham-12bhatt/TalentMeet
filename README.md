@@ -75,4 +75,3 @@ TalentMeet is a full-stack MERN-based interview platform designed for real-time 
 
 ---
 
-## 📁 Project Structure
