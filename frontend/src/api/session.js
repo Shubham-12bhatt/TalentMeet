@@ -7,7 +7,7 @@ export const sessionApi = {
     return response.data;
   },
 
-
+//this is for getting active session
   getActiveSessions: async () => {
     const response = await axiosInstance.get('/sessions/active');
     return response.data;
@@ -27,7 +27,7 @@ export const sessionApi = {
     const response = await axiosInstance.post(`/sessions/${id}/join`);
     return response.data;
   },
-
+//end session 
   endSession: async (id) => {
     const response = await axiosInstance.post(`/sessions/${id}/end`);
     return response.data;
