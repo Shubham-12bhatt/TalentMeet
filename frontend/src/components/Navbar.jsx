@@ -3,6 +3,7 @@ import { BookOpenIcon, LayoutDashboardIcon, Video } from 'lucide-react';
 import React from 'react'
 import { Link, useLocation } from 'react-router'
 
+//Implemented Navbr
 function Navbar() {
   const location = useLocation();
   const isActive = (path) => {
