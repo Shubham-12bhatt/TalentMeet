@@ -1,16 +1,9 @@
 import { createSession } from 'react-router';
 import axiosInstance from '../lib/axios';
 
-/**
- * API service for managing sessions.
- * Provides methods for creating, joining, ending, and fetching sessions.
- */
+
 export const sessionApi = {
-  /**
-   * Creates a new session.
-   * @param {Object} data - The session data to create.
-   * @returns {Promise<Object>} The created session data.
-   */
+
   createSession: async (data) => {
     const response = await axiosInstance.post('/sessions', data);
     return response.data;
