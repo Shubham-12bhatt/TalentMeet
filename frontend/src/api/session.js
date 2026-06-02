@@ -9,7 +9,7 @@ export const sessionApi = {
     return response.data;
   },
 
- 
+ //get active sessions
   getActiveSessions: async () => {
     const response = await axiosInstance.get('/sessions/active');
     return response.data;
