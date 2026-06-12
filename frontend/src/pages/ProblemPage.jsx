@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import ProblemDescription from '../components/ProblemDescription';
 import CodeEditor from '../components/CodeEditor';
 import OutputPanel from '../components/OutputPanel';
-import { executeCode } from '../lib/piston';
+import { executeCode } from '../lib/judge0';
 import toast from 'react-hot-toast';
 function ProblemPage() {
   const { id } = useParams();

@@ -9,7 +9,7 @@ import CodeEditor from "../components/CodeEditor";
 import OutputPanel from "../components/OutputPanel";
 import { PROBLEMS } from "../data/problem";
 import { Loader2Icon, LogOutIcon, PhoneOffIcon } from "lucide-react";
-import { executeCode } from "../lib/piston";
+import { executeCode } from "../lib/judge0";
 import useStreamClient from "../hooks/useStreamClient";
 import { StreamCall, StreamVideo } from "@stream-io/video-react-sdk";
 import VideoCallUI from "../components/VideoCallUI";
