@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//api for code execution
 const JUDGE0_API = import.meta.env.VITE_JUDGE0_API;
 
 const LANGUAGE_IDS = {
@@ -7,6 +7,7 @@ const LANGUAGE_IDS = {
   python: 71,
   java: 62,
 };
+
 
 export async function executeCode(language, code) {
   try {
