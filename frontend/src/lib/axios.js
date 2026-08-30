@@ -1,9 +1,25 @@
 import axios from 'axios';
-console.error("DEBUG API URL:", import.meta.env.VITE_API_URL);
 
 const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
     withCredentials: true,
 });
+
+axiosInstance.interceptors.request.use(
+    async (config) => {
+        try {
+            const token = await window.Clerk?.session?.getToken();
+            if (token) {
+                config.headers.Authorization = `Bearer ${token}`;
+            }
+        } catch (error) {
+            console.error("Error attaching Clerk authorization header:", error);
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
 
 export default axiosInstance;
