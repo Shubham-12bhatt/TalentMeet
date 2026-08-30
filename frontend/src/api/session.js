@@ -1,4 +1,3 @@
-import { createSession } from 'react-router';
 import axiosInstance from '../lib/axios';
 
 
@@ -40,7 +39,7 @@ export const sessionApi = {
   },
 
 
-  getStreamToken: async (id) => {
+  getStreamToken: async () => {
     const response = await axiosInstance.get(`/chat/token`);
     return response.data;
   },
