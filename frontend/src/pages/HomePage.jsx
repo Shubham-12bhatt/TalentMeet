@@ -1,7 +1,6 @@
-import React from 'react';
 import { Video, ArrowRight, ZapIcon, CheckSquare, CheckIcon, VideoIcon, Code2, Users } from 'lucide-react';
 import { Link } from 'react-router';
-import { SignInButton } from '@clerk/clerk-react';
+import { SignInButton, SignUpButton } from '@clerk/clerk-react';
 
 const HomePage = () => {
   return (
@@ -32,11 +31,12 @@ const HomePage = () => {
                   Log in
                 </button>
               </SignInButton>
-              
+              <SignUpButton mode="modal">
               <button className="group cursor-pointer relative inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-500/20 to-cyan-600/20 border border-blue-500/30 text-blue-100 font-medium overflow-hidden transition-all duration-300 hover:border-blue-400/50 hover:bg-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] focus:outline-none focus:ring-2 focus:ring-blue-500/50">
                 <span className="relative z-10 text-sm">Get Started</span>
                 <ArrowRight className="size-4 relative z-10 text-cyan-300 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
+              </SignUpButton>
             </div>
           </div>
         </div>
